@@ -1,0 +1,41 @@
+<!--
+
+Название: Получение погоды.
+Цель: Получение погоды.
+
+-->
+
+
+<project>
+    <parent>
+        <artifactId>3lab_pp</artifactId>
+        <groupId>ru.mirea</groupId>
+        <version>0.1</version>
+    </parent>
+    <packaging>jar</packaging>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>WeatherService</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>ru.mirea</groupId>
+            <artifactId>DataSourceImple</artifactId>
+            <version>0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+
+
+</project>

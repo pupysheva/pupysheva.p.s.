@@ -1,0 +1,6 @@
+ru\mirea\WeatherService\ThreadGenerator.class
+ru\mirea\WeatherService\TaskExecutor.class
+ru\mirea\WeatherService\Logger.class
+ru\mirea\WeatherService\TaskGenerator.class
+ru\mirea\WeatherService\ThreadExecutor.class
+ru\mirea\WeatherService\ThreadPrint.class

@@ -1,0 +1,43 @@
+<!--
+
+Название: Банк реализаций данных.
+Цель: Реализация всего, что содержится DataSourceApi.
+
+-->
+
+
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <artifactId>3lab_pp</artifactId>
+        <groupId>ru.mirea</groupId>
+        <version>0.1</version>
+    </parent>
+
+    <artifactId>DataSourceImple</artifactId>
+    <packaging>jar</packaging>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>ru.mirea</groupId>
+            <artifactId>DataSourceApi</artifactId>
+            <version>0.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+</project>

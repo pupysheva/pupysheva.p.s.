@@ -1,0 +1,35 @@
+<!--
+
+Название: Банк интерфейсов данных
+Цель: Содержать в себе интерфейсы чего-то.
+
+-->
+
+
+<project>
+    <parent>
+        <artifactId>3lab_pp</artifactId>
+        <groupId>ru.mirea</groupId>
+        <version>0.1</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <artifactId>DataSourceApi</artifactId>
+
+
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>RELEASE</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
