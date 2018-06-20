@@ -1,18 +1,13 @@
 import org.junit.Test;
 import ru.mirea.DataSourceApi.ICustomQueue;
-import ru.mirea.DataSourceApi.ITask;
-import ru.mirea.DataSourceApi.ITaskGenerator;
 import ru.mirea.DataSourceImple.CustomQueue;
-import ru.mirea.DataSourceImple.TaskGenerator;
 import ru.mirea.WeatherService.*;
-
-import java.util.*;
 
 public class TestServiceWeather {
     @Test
     public void main() throws InterruptedException {//TestMain1
         ICustomQueue inQueue = new CustomQueue(50);
-        ITaskGenerator tg = new TaskGenerator(50, inQueue);
+        TaskGenerator tg = new TaskGenerator(50, inQueue);
 
         ThreadGenerator thGenerator = new ThreadGenerator(tg, 50);
         Thread threadGenerator = new Thread(thGenerator);

@@ -16,13 +16,13 @@ import ru.mirea.DataSourceApi.ITask;
 import java.util.*;
 public class Logger {
     public static void log(ICustomQueue outQueue) {
-        ITask prinOutQueue;
+        ITask printOutQueue;
         synchronized (outQueue) {
-            prinOutQueue = outQueue.getQeue().poll();
+            printOutQueue = outQueue.getQeue().poll();
         }
-        if (prinOutQueue != null) {
-            prinOutQueue.printTask();
-            System.out.println("" + prinOutQueue.getWeather());
+        if (printOutQueue != null) {
+            printOutQueue.printTask();
+            System.out.println("" + printOutQueue.getWeather());
         }
     }
 }
