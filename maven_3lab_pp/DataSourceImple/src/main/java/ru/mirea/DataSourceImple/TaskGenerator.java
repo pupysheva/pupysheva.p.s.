@@ -1,4 +1,4 @@
-/*package ru.mirea.DataSourceImple;
+package ru.mirea.DataSourceImple;
 import java.util.*;
 import ru.mirea.DataSourceApi.ICustomQueue;
 import ru.mirea.DataSourceApi.ITaskGenerator;
@@ -9,7 +9,7 @@ public class TaskGenerator implements ITaskGenerator {
     public final ICustomQueue queue;
     public final int count;
 
-    TaskGenerator(int count, ICustomQueue queue) {
+    public TaskGenerator(int count, ICustomQueue queue) {
         this.queue = queue;
         this.count = count;
         cities.add("Moscow");
@@ -44,4 +44,3 @@ public class TaskGenerator implements ITaskGenerator {
 
     }
 }
-*/

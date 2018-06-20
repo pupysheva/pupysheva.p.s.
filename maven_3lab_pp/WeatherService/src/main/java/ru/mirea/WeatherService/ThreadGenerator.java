@@ -5,6 +5,7 @@ package ru.mirea.WeatherService;/*
  */
 
 import ru.mirea.DataSourceApi.ICustomQueue;
+import ru.mirea.DataSourceApi.ITaskGenerator;
 
 /**
  *
@@ -12,14 +13,14 @@ import ru.mirea.DataSourceApi.ICustomQueue;
  */
 public class ThreadGenerator implements Runnable {
 
-    private TaskGenerator taskGenerator;
+    private ITaskGenerator taskGenerator;
     ICustomQueue inQ;
     private boolean isThreadOn = true;
     private int queueSize;
 
-    public ThreadGenerator(TaskGenerator taskGenerator, int queueSize) {
+    public ThreadGenerator(ITaskGenerator taskGenerator, int queueSize) {
         this.taskGenerator = taskGenerator;
-        this.inQ = taskGenerator.queue;
+        this.inQ = taskGenerator.getQueue();
         this.queueSize = queueSize;
     }
 

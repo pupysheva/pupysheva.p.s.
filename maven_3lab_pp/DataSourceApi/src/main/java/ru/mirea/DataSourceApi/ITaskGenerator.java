@@ -1,24 +1,24 @@
-//package ru.mirea.DataSourceApi;
+package ru.mirea.DataSourceApi;
 
 /**
  * Интерфейс, который описывает работу любого генератора задач.
  */
-//public interface ITaskGenerator {
+public interface ITaskGenerator {
     /**
      * Сгенерировать очередь из порядкого номера i в одну единицу.
      * @param i Порядковый номер очереди. В случае выхода за границы, отсчёт будет сбрасываться.
      */
-    //public void generate(int i);
+    public void generate(int i);
 
     /**
      * Получает очередь, в которой содержатся готовые сгенерированные задачи.
      * @return Ссылка на очередь с готовыми задачами.
      */
-    //public ICustomQueue getQueue();
+    public ICustomQueue getQueue();
 
     /**
      * Получает количество сгенерированных задач.
      * @return Количество задач в очреди.
      */
-   // public int getCount();
-//}
+    public int getCount();
+}
