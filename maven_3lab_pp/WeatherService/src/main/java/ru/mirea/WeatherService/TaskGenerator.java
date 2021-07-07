@@ -1,9 +1,7 @@
 package ru.mirea.WeatherService;
-import ru.mirea.DataSourceApi.ICustomQueue;
-import ru.mirea.DataSourceApi.ITask;
-import ru.mirea.DataSourceImple.Task;
-
 import java.util.*;
+import ru.mirea.DataSourceApi.ICustomQueue;
+import ru.mirea.DataSourceImple.Task;
 
 public class TaskGenerator {
 
@@ -26,10 +24,18 @@ public class TaskGenerator {
         cities.add("Ottawa");
     }
 
+    public int getCount(){
+        return count;
+    }
+
+    public ICustomQueue getQueue(){
+        return queue;
+    }
+
     public void generate(int i) {
 
         int currentPosition = i % cities.size();
-        ITask task = new Task(i, cities.get(currentPosition), new Date());
+        Task task = new Task(i, cities.get(currentPosition), new Date());
         synchronized (queue) {
             queue.setQeue(task);
         }

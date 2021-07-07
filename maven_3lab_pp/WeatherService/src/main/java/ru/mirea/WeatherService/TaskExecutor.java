@@ -5,7 +5,7 @@ import ru.mirea.DataSourceApi.ITask;
 
 import java.util.*;
 
-public class TaskExecutor {
+public class TaskExecutor implements Runnable {
 
     Map<String, String> forecasts = new HashMap<>();
     
@@ -34,31 +34,26 @@ public class TaskExecutor {
 
     }
 
-    public void executor() {
+    /**
+     * Ранее execute. Решает задачи, пока не будет вызван Thread.interrupt.
+     */
+    @Override
+    public void run() {
         while (!Thread.interrupted()) {
-            try {
-                if (inQueue.size() > 0) {
-                    ITask firstElemQue;
-                    synchronized (inQueue) {
-                        firstElemQue = inQueue.poll();
-                    }
-                    if (firstElemQue != null) {
-                        //System.out.println("ОК");
-                        int id = firstElemQue.getId();
-                        Date date = firstElemQue.getDate();
-                        String city = firstElemQue.getCity();
-                        firstElemQue.setWeather("weather:"+ forecasts.get(city));
-                        synchronized (outQueue) {
-                            //outQueue.getQeue().add(firstElemQue); 
-                            outQueue.add(firstElemQue);
-                        }
-                    } else {
-                        System.out.println("ERROR");
-                    }
+            if (inQueue.size() > 0) {
+                ITask firstElemQue;
+                synchronized (inQueue) {
+                    firstElemQue = inQueue.poll();
                 }
-                Thread.sleep(10);
-            } catch (InterruptedException e) {
-                return;
+                if (firstElemQue != null) {
+                    String city = firstElemQue.getCity();
+                    firstElemQue.setWeather("weather:" + forecasts.get(city));
+                    synchronized (outQueue) {
+                        outQueue.add(firstElemQue);
+                    }
+                } else {
+                    System.out.println("ERROR");
+                }
             }
         }
     }

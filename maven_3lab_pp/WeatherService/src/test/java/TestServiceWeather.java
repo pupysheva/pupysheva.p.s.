@@ -1,10 +1,7 @@
 import org.junit.Test;
 import ru.mirea.DataSourceApi.ICustomQueue;
-import ru.mirea.DataSourceApi.ITask;
 import ru.mirea.DataSourceImple.CustomQueue;
 import ru.mirea.WeatherService.*;
-
-import java.util.*;
 
 public class TestServiceWeather {
     @Test
@@ -24,10 +21,9 @@ public class TestServiceWeather {
         CustomQueue outQueue = new CustomQueue(50);
         TaskExecutor te = new TaskExecutor(inQueue, outQueue);
 
-        ThreadExecutor thExecutor = new ThreadExecutor(te);
-        Thread threadExecutor1 = new Thread(thExecutor);
-        Thread threadExecutor2 = new Thread(thExecutor);
-        Thread threadExecutor3 = new Thread(thExecutor);
+        Thread threadExecutor1 = new Thread(te);
+        Thread threadExecutor2 = new Thread(te);
+        Thread threadExecutor3 = new Thread(te);
         threadExecutor1.start();
         threadExecutor2.start();
         threadExecutor3.start();

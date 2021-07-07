@@ -1,8 +1,4 @@
-package ru.mirea.WeatherService;/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+package ru.mirea.WeatherService;
 
 import ru.mirea.DataSourceApi.ICustomQueue;
 
@@ -19,7 +15,7 @@ public class ThreadGenerator implements Runnable {
 
     public ThreadGenerator(TaskGenerator taskGenerator, int queueSize) {
         this.taskGenerator = taskGenerator;
-        this.inQ = taskGenerator.queue;
+        this.inQ = taskGenerator.getQueue();
         this.queueSize = queueSize;
     }
 
